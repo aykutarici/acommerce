@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'auth'], function() {
+	Route::get('/subscription/index', 'SubscriptionsController@index')->name('subscription.index');
+	Route::post('/subscription/create', 'SubscriptionsController@create')->name('subscription.create');
+	Route::get('/subscription/success', 'SubscriptionsController@success')->name('subscription.success');
+});
