@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Laravel\Cashier\Cashier;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+	    Cashier::ignoreMigrations();
     }
 
     /**
@@ -23,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+	    Schema::defaultStringLength(191);
+
     }
 }
