@@ -82,7 +82,7 @@
     <div class="content">
 
         <div class="links">
-            <a href="{{ route('subscription.new') }}">Subscribe</a>
+            <a href="{{ route('subscription.index') }}">Subscribe</a>
         </div>
     </div>
 </div>
